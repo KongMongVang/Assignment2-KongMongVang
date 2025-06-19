@@ -31,7 +31,7 @@ public class J1Controller : ControllerBase
     /// response: 2370
     /// </example> 
    
-  
+
     [HttpPost(template: "Delivedroid")]
     public int Post([FromForm] int Collisions, [FromForm] int Deliveries)
     {
