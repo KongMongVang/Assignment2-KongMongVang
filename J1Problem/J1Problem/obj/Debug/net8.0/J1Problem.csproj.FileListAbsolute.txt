@@ -30,3 +30,4 @@
 /Users/kongvang/Desktop/Humber Web Development Term 1/Back-End Web Development 1 HTTP-5125/Assignment2-KongMongVang/J1Problem/J1Problem/obj/Debug/net8.0/J1Problem.pdb
 /Users/kongvang/Desktop/Humber Web Development Term 1/Back-End Web Development 1 HTTP-5125/Assignment2-KongMongVang/J1Problem/J1Problem/obj/Debug/net8.0/J1Problem.genruntimeconfig.cache
 /Users/kongvang/Desktop/Humber Web Development Term 1/Back-End Web Development 1 HTTP-5125/Assignment2-KongMongVang/J1Problem/J1Problem/obj/Debug/net8.0/ref/J1Problem.dll
+/Users/kongvang/Desktop/Humber Web Development Term 1/Back-End Web Development 1 HTTP-5125/Assignment2-KongMongVang/J1Problem/J1Problem/obj/Debug/net8.0/J1Problem.sourcelink.json
