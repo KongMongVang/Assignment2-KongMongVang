@@ -1,0 +1,31 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
+
+namespace J1Problem.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+
+public class J2Q1 : ControllerBase
+{
+    /// <summary>
+    /// Adds up how spicy the chili is
+    /// User types in pepper names, one per line
+    /// When user presses enter on a blank line, it stops and shows the total spiciness
+    /// </summary>
+    /// 
+    /// <param name="" </param>
+    /// <param name=""</param>
+    /// 
+    /// <returns> 
+    /// When user presses enter on a blank line, it stops and shows the total spiciness
+    /// </returns>
+    /// 
+    /// <example>
+    /// </example>
+
+
+
+    [HttpPost(template: "SpecialDay")]
+    public string SpecialDay([FromForm] int Dates, [FromForm] int Months)
+}
