@@ -24,11 +24,11 @@ public class J1Controller : ControllerBase
     /// 
     /// <example>
     /// "POST" -H "Content-Type: application/x-www-form-urlencoded" -d "Collisions=5&Deliveries=9" http://localhost:5262/api/J1/Delivedroid 
-    /// response: 900
+    /// responds: 900
     /// "POST" -H "Content-Type: application/x-www-form-urlencoded" -d "Collisions=8&Deliveries=4" http://localhost:5262/api/J1/Delivedroid
-    /// response: 120
+    /// responds: 120
     /// "POST" -H "Content-Type: application/x-www-form-urlencoded" -d "Collisions=23&Deliveries=42" http://localhost:5262/api/J1/Delivedroid
-    /// response: 2370
+    /// responds: 2370
     /// </example> 
    
 
