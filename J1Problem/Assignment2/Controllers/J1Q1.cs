@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 
-namespace Assignment2.Controllers;
+namespace J1Problem.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
