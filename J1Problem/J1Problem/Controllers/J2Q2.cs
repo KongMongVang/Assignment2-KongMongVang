@@ -9,62 +9,50 @@ namespace J1Problem.Controllers;
 public class J2Q2 : ControllerBase
 {
     /// <summary>
-    /// Adds up how spicy the chili is
-    /// User types in pepper names
+    /// Decodes a given message
+    /// User types types in message by writing positive integer and symbol
     /// </summary>
     /// 
-    /// <param name="ingredients" enter the type of pepper from pepper list</param>
+    /// <param name="messages" enters message</param>
     /// 
     /// <returns> 
-    /// Will shows the total spiciness
+    /// Will decode the given message
     /// </returns>
     /// 
     /// <example>
-    /// GET "http://localhost:5262/api/J2Q1/ChiliPepper?Ingredients=Poblano%2CPoblano%2CPoblano%2CPoblano%2CPoblano%20"
-    /// response: 6000
-    /// GET "http://localhost:5262/api/J2Q1/ChiliPepper?Ingredients=Poblano%2CMirasol%2CSerrano%2CCayenne%2CThai%2CHabanero%20"
-    /// response: 138000
-    /// GET "http://localhost:5262/api/J2Q1/ChiliPepper?Ingredients=Mirasol%2CSerrano%2CThai%2C%20Habanero%20" 
-    /// response: 96500
-    /// GET "http://localhost:5262/api/J2Q1/ChiliPepper?Ingredients=Mirasol%2CSerrano%2CThai%2CHabanero%20"
-    /// response: 96500  
+    /// 'POST' \ 'http://localhost:5262/api/J2Q2/Decompress' \ -H 'accept: text/plain' \ -H 'Content-Type: application/json' \ -d '["3 a"]'
+    /// response: ["aaa"]
+    /// 'POST' \ 'http://localhost:5262/api/J2Q2/Decompress' \ -H 'accept: text/plain' \ -H 'Content-Type: application/json' \ -d '["9 +"]'
+    /// response: ["+++++++++"]
+    /// 'POST' \ 'http://localhost:5262/api/J2Q2/Decompress' \ -H 'accept: text/plain' \ -H 'Content-Type: application/json' \ -d '["3 -"]'
+    /// response: ["---"]
     /// </example>
 
 
-    [HttpPost(template: "Decompress")]
-    public Ac(string Ingredients)
+    [HttpPost("Decompress")]
+    public List<string> DecodeMessage([FromBody] List<string> messages)
     {
-        int heat = 0;
-        string[] SHU = Ingredients.Split(",");
+        var output = new List<string>();
 
-        for (int i = 0; i < SHU.Length; i++)
+        foreach (var message in messages)
         {
-            if (SHU[i] == "Poblano")
+            var parts = message.Split(' ');
+
+            if (parts.Length < 2 || !int.TryParse(parts[0], out int count) || count <= 0 || count >= 100)
+                continue;
+
+            string word = parts[1];
+            string repeated = "";
+
+            for (int i = 0; i < count; i++)
             {
-                heat = heat + 1500;
+                repeated += word;
             }
-            else if (SHU[i] == "Mirasol")
-            {
-                heat = heat + 6000;
-            }
-            else if (SHU[i] == "Serrano")
-            {
-                heat = heat + 15500;
-            }
-            else if (SHU[i] == "Cayenne")
-            {
-                heat = heat + 40000;
-            }
-            else if (SHU[i] == "Thai")
-            {
-                heat = heat + 75000;
-            }
-            else if (SHU[i] == "Habanero")
-            {
-                heat = heat + 125000;
-            }
+
+            output.Add(repeated);
         }
-        return heat;
+
+        return output;
     }
 
 }
