@@ -6,7 +6,7 @@ namespace J1Problem.Controllers;
 [ApiController]
 [Route("api/[controller]")]
 
-public class J1Controller : ControllerBase
+public class J1Q1 : ControllerBase
 {
     /// <summary>
     /// Calculates the final score for the Deliv-e-droid game.
