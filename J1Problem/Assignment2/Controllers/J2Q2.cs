@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 
-namespace J1Problem.Controllers;
+namespace Assignment2.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
 
-public class J2Q1 : ControllerBase
+public class J2Q2 : ControllerBase
 {
     /// <summary>
     /// Adds up how spicy the chili is
@@ -31,8 +31,8 @@ public class J2Q1 : ControllerBase
     /// </example>
 
 
-    [HttpGet(template: "ChiliPepper")]
-    public int ChiliPepper(string Ingredients)
+    [HttpPost(template: "Decompress")]
+    public Ac(string Ingredients)
     {
         int heat = 0;
         string[] SHU = Ingredients.Split(",");
